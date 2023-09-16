@@ -82,7 +82,19 @@ public class MeetingInfraestructure:IMeetingInfraestructure
 
     public Task<bool> CreateMeetingAsync(int id, Meeting meeting)
     {
-        throw new NotImplementedException();
+        try
+        {
+            meeting.IsActive = true;
+            _VetDBContext.Meetings.Add(meeting);
+            _VetDBContext.SaveChanges();
+            return Task.FromResult(true);
+
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
 
     public async Task<bool> FinishMeeting(int id, bool finish)
