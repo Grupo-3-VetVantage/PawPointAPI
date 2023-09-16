@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EfCoreDialogsState">
+    <option name="keyValueStorage">
+      <map>
+        <entry key="Common:buildConfiguration" value="Debug" />
+        <entry key="Common:f0a2479d-3aa6-4ff3-a8b6-252b5375a4df:dbContext" value="PawPoint.Infraestructure.Context.VetDbContext" />
+        <entry key="Common:noBuild" value="false" />
+        <entry key="Common:outputFolder" value="Migrations" />
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,13 @@
+﻿namespace  PawPoint.Infraestructure.Models;
+
+public class Meeting:BaseModel
+{
+    public DateTime DateToMeet { get; set; }
+    public bool Finish { get; set; }
+    public string Description { get; set; } = string.Empty;
+    public int VetId { get; set; }
+    public Veterinary Veterinary { get; set; } = null!;
+    public int UserId { get; set; }
+    public User User { get; set; } = null!;
+    
+}
