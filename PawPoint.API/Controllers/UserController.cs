@@ -71,11 +71,11 @@ namespace PawPoint.API.Controllers
 
         // PUT: api/User/5
         [HttpPut("{id}")]
-        public async Task<IActionResult>Put(int id, [FromBody] UserCreateInput userInput)
+        public async Task<IActionResult>Put(int id, [FromBody] UserUpdateInput userInput)
         {
             if (ModelState.IsValid)
             {
-                var user=_mapper.Map<UserCreateInput,User>(userInput);
+                var user=_mapper.Map<UserUpdateInput,User>(userInput);
                 await _userDomain.UpdateUser(id,user);
                 return NoContent();
             }
@@ -117,11 +117,11 @@ namespace PawPoint.API.Controllers
         // POST: api/User/SingUp
         [HttpPost]
         [Route("SingUp")]
-        public async Task<IActionResult> SingUp(UserSignup userSignup)
+        public async Task<IActionResult> SingUp(SignupUserInput userSignup)
         {
             try
             {
-                var user = _mapper.Map<UserSignup, User>(userSignup);
+                var user = _mapper.Map<SignupUserInput, User>(userSignup);
 
                 var result= await _userDomain.Signup(user);
 

@@ -12,8 +12,10 @@ public class InputToModel:Profile
     {
         CreateMap<UserCreateInput,User>();
         CreateMap<UserUpdateInput,User>();
-        CreateMap<UserSignup,User>();
+        CreateMap<SignupUserInput,User>();
+        CreateMap<SignupVetInput, Veterinary>();
         CreateMap<LoginInput,User>();
+        CreateMap<LoginVetInput,Veterinary>();
         CreateMap<PetCreateInput,Pet>();
         CreateMap<VeterinaryCreateInput,Veterinary>();
         CreateMap<ReviewCreateInput,Review>();

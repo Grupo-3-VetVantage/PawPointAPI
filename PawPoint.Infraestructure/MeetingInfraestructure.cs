@@ -80,23 +80,6 @@ public class MeetingInfraestructure:IMeetingInfraestructure
         return await _VetDBContext.Meetings.Where(meeting => meeting.VetId == veterinaryId).ToListAsync();
     }
 
-    public Task<bool> CreateMeetingAsync(int id, Meeting meeting)
-    {
-        try
-        {
-            meeting.IsActive = true;
-            _VetDBContext.Meetings.Add(meeting);
-            _VetDBContext.SaveChanges();
-            return Task.FromResult(true);
-
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            throw;
-        }
-    }
-
     public async Task<bool> FinishMeeting(int id, bool finish)
     {
         var findMeeting = await _VetDBContext.Meetings.FindAsync(id);

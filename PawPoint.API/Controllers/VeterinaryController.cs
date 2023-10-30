@@ -98,7 +98,7 @@ namespace PawPoint.API.Controllers
         // Get: api/Login
         [HttpPost]
         [Route("Login")]
-        public async Task<IActionResult> Login(LoginInput veterinaryInput)
+        public async Task<IActionResult> Login(LoginVetInput veterinaryInput)
         {
             var veterinary = await _veterinaryInfraestructure.GetVeterinaryLogin(veterinaryInput.Email, veterinaryInput.Password);
             if (veterinary == null) return NotFound();
@@ -107,14 +107,14 @@ namespace PawPoint.API.Controllers
             return Ok(result);
         }
         
-        // Get: api/Veterinary/SingUp
+        // Post: api/Veterinary/SingUp
         [HttpPost]
         [Route("SingUp")]
-        public async Task<IActionResult> SingUp(VeterinaryCreateInput veterinaryInput)
+        public async Task<IActionResult> SingUp(SignupVetInput veterinaryInput)
         {
             if (ModelState.IsValid)
             {
-                var veterinary=_mapper.Map<VeterinaryCreateInput,Veterinary>(veterinaryInput);
+                var veterinary=_mapper.Map<SignupVetInput,Veterinary>(veterinaryInput);
                 await _veterinaryDomain.CreateVeterinary(veterinary);
                 
             }
