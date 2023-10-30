@@ -116,8 +116,8 @@ namespace PawPoint.API.Controllers
         
         // POST: api/User/SingUp
         [HttpPost]
-        [Route("SingUp")]
-        public async Task<IActionResult> SingUp(SignupUserInput userSignup)
+        [Route("SignUp")]
+        public async Task<IActionResult> SignUp(SignupUserInput userSignup)
         {
             try
             {
