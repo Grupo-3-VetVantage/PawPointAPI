@@ -12,7 +12,8 @@ public interface IVeterinaryInfraestructure
     Task<bool> DeleteVeterinary(int id);
     Task<Veterinary?> GetVeterinaryLogin(string email, string password);
     Task<int> Signup(Veterinary veterinary);
-
+    
+    Task<Veterinary?> GetByEmail(string email);
 
     Task<List<Meeting>>GetMeetingsByVeterinaryId(int id);
     Task<List<Product>>GetProductsByVeterinaryId(int id);

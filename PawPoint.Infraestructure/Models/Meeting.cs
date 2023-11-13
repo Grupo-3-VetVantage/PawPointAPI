@@ -2,7 +2,7 @@
 
 public class Meeting:BaseModel
 {
-    public DateTime DateToMeet { get; set; }
+    public DateOnly DateToMeet { get; set; }
     public bool Finish { get; set; }
     public string Description { get; set; } = string.Empty;
     public int VetId { get; set; }

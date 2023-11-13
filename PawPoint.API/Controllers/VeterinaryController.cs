@@ -59,6 +59,7 @@ namespace PawPoint.API.Controllers
         {
             if (ModelState.IsValid)
             {
+                
                 var veterinary=_mapper.Map<VeterinaryCreateInput,Veterinary>(veterinaryInput);
                 await _veterinaryDomain.CreateVeterinary(veterinary);
                 

@@ -25,6 +25,10 @@ public class VeterinaryInfraestructure:IVeterinaryInfraestructure
             try
             {
                 veterinary.IsActive = true;
+                veterinary.DateCreated = DateTime.Now;
+            
+                
+                
                 _VetDBContext.Veterinaries.Add(veterinary);
                 await _VetDBContext.SaveChangesAsync();
                 return true;
@@ -103,6 +107,11 @@ public class VeterinaryInfraestructure:IVeterinaryInfraestructure
     public async Task<List<Review>> GetReviewsByVeterinaryId(int reviewId)
     {
         return await _VetDBContext.Reviews.Where(review => review.VeterinaryId == reviewId).ToListAsync();
+    }
+    
+    public async Task<Veterinary?> GetByEmail(string email)
+    {
+        return await _VetDBContext.Veterinaries.FirstOrDefaultAsync(vet => vet.Email == email);
     }
 
   

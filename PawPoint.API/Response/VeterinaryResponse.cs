@@ -14,8 +14,8 @@ public class VeterinaryResponse
     public string Address { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
     public string ImgUrl { get; set; } = string.Empty;
-    public ICollection<Meeting>? Meetings { get; set; } = new List<Meeting>();
-    public ICollection<Service>? Services { get; set; } = new List<Service>();
-    public ICollection<Review>? Reviews { get; set; } = new List<Review>();
-    public ICollection<Product>? Products { get; set; } = new List<Product>();
+    public ICollection<MeetingResponse>? Meetings { get; set; } = new List<MeetingResponse>();
+    public ICollection<ServiceResponse>? Services { get; set; } = new List<ServiceResponse>();
+    public ICollection<ReviewResponse>? Reviews { get; set; } = new List<ReviewResponse>();
+    public ICollection<ProductResponse>? Products { get; set; } = new List<ProductResponse>();
 }
