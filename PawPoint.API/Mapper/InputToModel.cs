@@ -18,6 +18,7 @@ public class InputToModel:Profile
         CreateMap<LoginVetInput,Veterinary>();
         CreateMap<PetCreateInput,Pet>();
         CreateMap<VeterinaryCreateInput,Veterinary>();
+        CreateMap<VeterinaryUpdateInput, Veterinary>();
         CreateMap<ReviewCreateInput,Review>();
         CreateMap<MeetingCreateInput,Meeting>();
         CreateMap<ProductCreateInput,Product>();
