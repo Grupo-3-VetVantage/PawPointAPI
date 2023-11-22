@@ -10,5 +10,9 @@ public class VeterinaryUpdateInput
     public string Description { get; set; } = string.Empty;
     public string ImgUrl { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
+    public ICollection<MeetingCreateInput>? Meetings { get; set; } = new List<MeetingCreateInput>();
+    public ICollection<ServiceCreateInput>? Services { get; set; } = new List<ServiceCreateInput>();
+    public ICollection<ReviewCreateInput>? Reviews { get; set; } = new List<ReviewCreateInput>();
+    public ICollection<ProductCreateInput>? Products { get; set; } = new List<ProductCreateInput>();
     
 }
