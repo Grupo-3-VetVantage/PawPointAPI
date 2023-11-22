@@ -87,6 +87,23 @@ namespace PawPoint.API.Controllers
             }
             return Ok();
         }
+        
+        //PATCH: api/Veterinary/5
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> Patch(int id, [FromBody] VeterinaryCreateInput veterinaryInput)
+        {
+            if (ModelState.IsValid)
+            {
+                var veterinary=_mapper.Map<VeterinaryCreateInput,Veterinary>(veterinaryInput);
+                await _veterinaryDomain.UpdateVeterinary(id,veterinary);
+                
+            }
+            else
+            {
+                return BadRequest();
+            }
+            return Ok();
+        }
 
         // DELETE: api/Veterinary/5
         [HttpDelete("{id}")]
