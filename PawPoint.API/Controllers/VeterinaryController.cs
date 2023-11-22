@@ -73,11 +73,11 @@ namespace PawPoint.API.Controllers
 
         // PUT: api/Veterinary/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, [FromBody] VeterinaryCreateInput veterinaryInput)
+        public async Task<IActionResult> Put(int id, [FromBody] VeterinaryUpdateInput veterinaryInput)
         {
             if (ModelState.IsValid)
             {
-                var veterinary=_mapper.Map<VeterinaryCreateInput,Veterinary>(veterinaryInput);
+                var veterinary=_mapper.Map<VeterinaryUpdateInput,Veterinary>(veterinaryInput);
                 await _veterinaryDomain.UpdateVeterinary(id,veterinary);
                 
             }
@@ -90,11 +90,11 @@ namespace PawPoint.API.Controllers
         
         //PATCH: api/Veterinary/5
         [HttpPatch("{id}")]
-        public async Task<IActionResult> Patch(int id, [FromBody] VeterinaryCreateInput veterinaryInput)
+        public async Task<IActionResult> Patch(int id, [FromBody] VeterinaryUpdateInput veterinaryInput)
         {
             if (ModelState.IsValid)
             {
-                var veterinary=_mapper.Map<VeterinaryCreateInput,Veterinary>(veterinaryInput);
+                var veterinary=_mapper.Map<VeterinaryUpdateInput,Veterinary>(veterinaryInput);
                 await _veterinaryDomain.UpdateVeterinary(id,veterinary);
                 
             }
