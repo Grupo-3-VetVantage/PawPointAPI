@@ -53,7 +53,7 @@ public class VeterinaryInfraestructure:IVeterinaryInfraestructure
             vetyFound.Speciality = veterinary.Speciality;
             vetyFound.Address = veterinary.Address;
             vetyFound.Phone = veterinary.Phone;
-            vetyFound.Email = veterinary.Email;
+            //vetyFound.Email = veterinary.Email;
             vetyFound.Description = veterinary.Description;
             vetyFound.ImgUrl = veterinary.ImgUrl;
             _VetDBContext.Veterinaries.Update(vetyFound);
