@@ -21,7 +21,7 @@ public class VetDbContext:DbContext
     {
         if (optionsBuilder.IsConfigured) return;
         var serverVersion = new MySqlServerVersion(new Version(8, 0, 29));
-        optionsBuilder.UseMySql("Server=sql10.freemysqlhosting.net,3306;Uid=sql10662767;Pwd=6lFxtL4YHq;Database=sql10662767;", serverVersion);
+        optionsBuilder.UseMySql("Server=sql10.freemysqlhosting.net,3306;Uid=sql10664453;Pwd=wkLJN48HLD;Database=sql10664453;", serverVersion);
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
