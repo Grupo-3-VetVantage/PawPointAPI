@@ -67,4 +67,8 @@ public class PetInfraestructure:IPetInfraestructure
         await _VetDBContext.SaveChangesAsync();
         return true;
     }
+    public async Task<List<Meeting>> GetMeetingsByPetId(int meetingId)
+    {
+        return await _VetDBContext.Meetings.Where(meeting => meeting.PetId == meetingId).ToListAsync();
+    }
 }

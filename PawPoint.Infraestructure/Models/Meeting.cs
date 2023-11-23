@@ -9,5 +9,8 @@ public class Meeting:BaseModel
     public Veterinary Veterinary { get; set; } = null!;
     public int UserId { get; set; }
     public User User { get; set; } = null!;
+    public int PetId { get; set; }
+    public Pet Pet { get; set; } = null!;
+    
     
 }

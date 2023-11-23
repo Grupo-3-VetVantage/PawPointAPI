@@ -12,5 +12,6 @@ public interface IMeetingDomain
     Task<bool> DeleteMeetingAsync(int id);
     Task<IEnumerable<Meeting>>GetAllMeetingByUserIdAsync(int userId);
     Task<IEnumerable<Meeting>>GetAllMeetingByVeterinaryIdAsync(int veterinaryId);
+    Task<IEnumerable<Meeting>>GetAllMeetingByPetIdAsync(int veterinaryId);
     
 }

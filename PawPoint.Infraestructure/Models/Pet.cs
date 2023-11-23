@@ -17,6 +17,6 @@ public class Pet:BaseModel
      public int OwnerId { get; set; }
      
      public User User { get; set; } = null!;
-    
+     public ICollection<Meeting>? Meetings { get; set; } = new List<Meeting>();
     
 }

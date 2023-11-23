@@ -102,5 +102,14 @@ namespace PawPoint.API.Controllers
 
             return Ok(result);
         }
+        // Get: api/Meeting/GetAllMeetingByPetId/5
+        [HttpGet("MeetingPet/{id}")]
+        public async Task<IActionResult> GetAllMeetingByPetId(int id)
+        {
+            var meetingFound = await _meetingDomain.GetAllMeetingByPetIdAsync(id);
+            var result = _mapper.Map<IEnumerable<Meeting>, List<MeetingResponse>>(meetingFound);
+
+            return Ok(result);
+        }
     }
 }

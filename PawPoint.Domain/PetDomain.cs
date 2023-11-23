@@ -36,4 +36,8 @@ public class PetDomain:IPetDomain
     {
         return await _petInfraestructure.DeletePetAsync(id);
     }
+    public async Task<List<Meeting>> GetMeetingsByPetId(int id)
+    {
+        return await _petInfraestructure.GetMeetingsByPetId(id);
+    }
 }

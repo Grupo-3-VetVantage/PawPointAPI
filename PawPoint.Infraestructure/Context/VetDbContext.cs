@@ -21,7 +21,7 @@ public class VetDbContext:DbContext
     {
         if (optionsBuilder.IsConfigured) return;
         var serverVersion = new MySqlServerVersion(new Version(8, 0, 29));
-        optionsBuilder.UseMySql("Server=sql10.freemysqlhosting.net,3306;Uid=sql10664453;Pwd=wkLJN48HLD;Database=sql10664453;", serverVersion);
+        optionsBuilder.UseMySql("Server=sql10.freemysqlhosting.net,3306;Uid=sql10664486;Pwd=eLeuwuh61e;Database=sql10664486;", serverVersion);
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -48,6 +48,12 @@ public class VetDbContext:DbContext
             .HasOne(c => c.Veterinary)
             .WithMany(vet => vet.Meetings)
             .HasForeignKey(c => c.VetId)
+            .IsRequired();
+        // Configura la relación Cita - Pet
+        modelBuilder.Entity<Meeting>()
+            .HasOne(c => c.Pet)
+            .WithMany(p => p.Meetings)
+            .HasForeignKey(c => c.PetId)
             .IsRequired();
 
         // Configura la relación ServicioVeterinario - Veterinario

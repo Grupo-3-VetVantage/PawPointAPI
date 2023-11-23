@@ -46,6 +46,7 @@ public class MeetingInfraestructure:IMeetingInfraestructure
             meetingFound.Finish = meeting.Finish;
             meetingFound.UserId = meeting.UserId;
             meetingFound.VetId = meeting.VetId;
+            meetingFound.PetId = meeting.PetId;
             _VetDBContext.Meetings.Update(meetingFound);
             await _VetDBContext.SaveChangesAsync();
             return true;
@@ -78,6 +79,10 @@ public class MeetingInfraestructure:IMeetingInfraestructure
     public async Task<IEnumerable<Meeting>?> GetAllMeetingByVeterinaryIdAsync(int veterinaryId)
     {
         return await _VetDBContext.Meetings.Where(meeting => meeting.VetId == veterinaryId).ToListAsync();
+    }
+    public async Task<IEnumerable<Meeting>?> GetAllMeetingByPetIdAsync(int petId)
+    {
+        return await _VetDBContext.Meetings.Where(meeting => meeting.PetId == petId).ToListAsync();
     }
 
     public async Task<bool> FinishMeeting(int id, bool finish)

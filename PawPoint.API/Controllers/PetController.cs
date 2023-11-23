@@ -91,5 +91,16 @@ namespace PawPoint.API.Controllers
             await _petDomain.DeletePetAsync(id);
             return Ok();
         }
+        
+        // Get: api/Pet/GetMeetingsByPetId
+        [HttpGet]
+        [Route("Meetings/{id}")]
+        public async Task<IActionResult> GetMeetingsByPetId(int id)
+        {
+            var meetings = await _petInfraestructure.GetMeetingsByPetId(id);
+            var result = _mapper.Map<List<Meeting>, List<MeetingResponse>>(meetings);
+
+            return Ok(result);
+        }
     }
 }

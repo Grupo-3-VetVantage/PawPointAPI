@@ -8,4 +8,5 @@ public class MeetingResponse
     public string Description { get; set; } = string.Empty;
     public int VetId { get; set; }
     public int UserId { get; set; }
+    public int PetId { get; set; }
 }

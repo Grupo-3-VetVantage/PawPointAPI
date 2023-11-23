@@ -9,7 +9,7 @@ public interface IPetInfraestructure
     Task<bool> CreatePetAsync(Pet pet);
     Task<bool> UpdatePetAsync(int id,Pet pet);
     Task<bool> DeletePetAsync(int id);
-    
+    Task<List<Meeting>>GetMeetingsByPetId(int id);
     
     
 }

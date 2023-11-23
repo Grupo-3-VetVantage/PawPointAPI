@@ -51,4 +51,8 @@ public class MeetingDomain:IMeetingDomain
     {
         return await _meetingInfraestructure.GetAllMeetingByVeterinaryIdAsync(veterinaryId);
     }
+    public async Task<IEnumerable<Meeting>> GetAllMeetingByPetIdAsync(int petId)
+    {
+        return await _meetingInfraestructure.GetAllMeetingByPetIdAsync(petId);
+    }
 }
